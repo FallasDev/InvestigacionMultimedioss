@@ -16,16 +16,57 @@
 
     <!-- Marcador Hiro -->
     <a-marker preset="hiro">
-  <!-- Avatar más grande + debug -->
+    <!-- Avatar más grande + debug -->
         <a-entity gltf-model="url(skin.glb)"
-                  position="0 0.8 0"          
-                  scale="1 1 1"            
-                  rotation="0 180 0"          
-                  animation-mixer             
-                  shadow="receive: true; cast: true"
-                  animation="property: position; to: 0 0.5 0; dur: 600; dir: alternate; loop: true"
-                  animation__spin="property: rotation; to: 0 540 0; dur: 1200; loop: true"
-          >        
+          position="0 0.8 0"
+          scale="1 1 1"                  
+          rotation="0 180 0"
+          animation-mixer                 
+          shadow="receive: true; cast: true">
+            
+              <!-- Animación de "rebote" vertical (como pisar al ritmo) -->
+              <a-animation attribute="position"
+                           property="position"
+                           from="0 0.8 0"
+                           to="0 0.95 0"
+                           dur="400"                     
+                           easing="ease-in-out-sine"
+                           dir="alternate"
+                           loop="true"
+                           delay="0">
+              </a-animation>
+            
+              <!-- Movimiento de cadera (side to side, típico salsa/reggaeton) -->
+              <a-animation attribute="position"
+                           property="position"
+                           from="0 0.8 0"
+                           to="0.15 0.8 0"               
+                           dur="800"
+                           easing="ease-in-out-sine"
+                           dir="alternate"
+                           loop="true"
+                           delay="100">
+              </a-animation>
+            
+              <!-- Giro de cuerpo (spin suave como en salsa) -->
+              <a-animation attribute="rotation"
+                           property="rotation"
+                           to="0 360 0"                  
+                           dur="5000"                    
+                           easing="linear"
+                           loop="true">
+              </a-animation>
+            
+              <!-- Brazos moviéndose (opcional, si tu modelo tiene brazos libres) -->
+              <a-animation attribute="rotation" target="#brazo-izq" 
+                           property="rotation"
+                           from="0 0 0"
+                           to="30 0 -20"
+                           dur="600"
+                           dir="alternate"
+                           loop="true">
+              </a-animation>
+            </a-entity>
 
         </a-entity>
       

@@ -16,18 +16,19 @@
 
     <!-- Marcador Hiro -->
     <a-marker preset="hiro">
-      <!-- Cubo más grande y visible + algo extra para debug -->
-            <a-entity
-        id="avatar"
-        gltf-model="url(skin.glb)"
-        scale="10 10 10"
-        position="0 0 0"
-        rotation="0 180 0">
-      </a-entity>
-      <!-- Plano verde semi-transparente para ver si detecta el plano del marcador -->
-      <a-plane position="0 0.01 0" rotation="-90 0 0" width="1" height="1" 
-               material="color: lime; transparent: true; opacity: 0.4;"></a-plane>
-    </a-marker>
+  <!-- Avatar más grande + debug -->
+        <a-entity gltf-model="#avatar"
+                  position="0 0.8 0"          
+                  scale="20 20 20"            
+                  rotation="0 180 0"          
+                  animation-mixer             
+                  shadow="receive: true; cast: true">  
+        </a-entity>
+      
+        <!-- Plano verde para confirmar detección -->
+        <a-plane position="0 0.01 0" rotation="-90 0 0" width="1" height="1" 
+                 material="color: lime; transparent: true; opacity: 0.4;"></a-plane>
+      </a-marker>
 
     <!-- Cámara explícita (obligatoria) -->
     <a-entity camera></a-entity>

@@ -12,11 +12,12 @@
     <a-marker preset="hiro">
 
       <a-entity
-        gltf-model="url(skin.glb)"
+        gltf-model="url(avatar.glb)"
         scale="0.1 0.1 0.1"
         position="0 0 0"
-        rotation="0 180 0">
-      </a-entity>
+        rotation="0 180 0"
+        gltf-model-loaded="console.log('✅ Modelo cargado')"
+      ></a-entity>
 
     </a-marker>
 
